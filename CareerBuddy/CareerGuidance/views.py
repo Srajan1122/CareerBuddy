@@ -11,4 +11,5 @@ def InputForm(request):
 
 def Output(request):
     print("Printed in views.Output")
-    return render(request,'CareerGuidance/Output.html') 
+    return render(request,'CareerGuidance/Output.html')
+    

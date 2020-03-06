@@ -445,7 +445,8 @@ input[type=radio] {
   -ms-transform: translateX(-50%); }
 
 .Form_form-submit {
-  text-align: right; }
+  text-align: center;
+  position: center;}
 
 .submit {
   width: 150px;
