@@ -87,7 +87,6 @@ def Output(request):
             for i in node:
                 if i.name == mynode:
                     for j in i.path[::-1]:
-                        print(j)
                         Cumulative_Time.append(Total_Time)
                         Time_list.append(i.avgTime)
                         new_id = Node.objects.get( Node_Name = j.name )
@@ -108,7 +107,7 @@ def Output(request):
         pros = pros[index::]
         cons = cons[index::]
         Time_list = Time_list[index::]
-
+        print(Time_list)
 
         data = []
         for i in range(len(Path_list)):

@@ -49,7 +49,8 @@
                 {% for i in data %}
                 <div >
                     <div class="mx-5">
-                        <h3>Stage {{ i.Stage }}</h3>
+                        
+                        <h2>{{i.Path_list}}</h2>
                         <div class="accordion" id="accordionExample">
 
                             <div class="card bg-light" style="background-color : white;">
@@ -63,7 +64,8 @@
 
                                 <div id="dakota{{ i.Stage }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" value=''>
                                     <div class="card-body">
-                                        <h3>{{i.Time_list}} years</h3>  
+                                       
+                                       
                                         Great day without sixth a lesser beginning. Their thing abundantly air moving saw fruitful lesser god. Sea abundantly blessed life set. Land. Lights divided man in deep in open upon.
                                     </div>
                                     {% if i.Stage == total_length %}
