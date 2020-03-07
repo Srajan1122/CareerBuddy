@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 import anytree
 from .models import Job,Node,Skillset,Tool,Resource,M_to_M
@@ -26,17 +27,33 @@ def Output(request):
         interest = request.POST.get('interest')
         # print(interest,age,qualification)
         job = Job.objects.get(Job_Name=interest)
-        # print(job.Job_Name)
-        n_id = M_to_M.objects.get(Node_id = job.Job_id)
+        print(job.Job_Name)
+        print(job.Job_id)
+        try:
+            n_id = M_to_M.objects.get(Node_id = job.Job_id)
+        except ObjectDoesNotExist:
+            n_id = 1
+        finally:
+            pass
+        
         sk_id = Skillset.objects.get(Job_id= job.Job_id)
         print(sk_id.Skill_Name)
         # Resources = list(sk_id.Skill_Name)
         # R_id = 
         # relation = Node.objects.get(Node_id = n_id.Node_id)
-        R_id = Resource.objects.get(Skill_id = sk_id.Skill_id)
-        print(R_id,R_id.Resource_Link)
-        Resources.append(R_id.Resource_Link)
-        T_id = Tool.objects.get(Skill_id = sk_id.Skill_id )
+        R_id = Resource.objects.filter(Skill_id = sk_id.Skill_id)
+        #print(R_id,R_id.Resource_Link)
+        print(R_id,'hi')
+        for i in R_id:
+            # print(i)
+            Resources.append(i.Resource_Link)
+        try:
+            T_id = Tool.objects.get(Skill_id = sk_id.Skill_id )
+        except ObjectDoesNotExist:
+            T_id = 1
+        finally:
+            pass
+        
         print(T_id.Tool_Name,T_id.Tool_id)
         Tools = T_id.Tool_Name
         Tdante = []
@@ -45,6 +62,8 @@ def Output(request):
         Skills = []
         Skills = sk_id.Skill_Name.strip('[]').split(',')
         print(Skills)
+        pros = []
+        cons = []
         Path_list = []
         flag = 0
         Time_list = []
@@ -68,6 +87,7 @@ def Output(request):
         else:
             node = tree.a
             for i in node:
+                print('hi')
                 print(i.name)
                 if i.name == mynode:
                     for j in i.path[::-1]:
@@ -77,10 +97,16 @@ def Output(request):
                         Total_Time = Total_Time + i.avgTime
                         Cumulative_Time.append(Total_Time)
                         Time_list.append(i.avgTime)
+                        print(j)
+                        new_id = Node.objects.get( Node_Name = j.name )
+                        pros.append(new_id.pros)
+                        cons.append(new_id.cons)
+                        # pros.append()
                         # print(avgTime)
                         if flag == 0 :
                             j = str(j)
                             Path_list = j[5:-12].strip("''").split('/')[1:]
+                            
                             flag = flag + 1
 
 
@@ -88,6 +114,11 @@ def Output(request):
                     
                         print(j)
         print(Path_list,Time_list)
-        params = {'Skills':Skills,"Resource":Resources,"Tools":Tools,"Aim":job.Job_Name,'Path_list':Path_list,'Total_time':Total_Time,'Time_list':Time_list,'Cumulative_Time':Cumulative_Time}        
+        
+        pros = pros[::-1]
+        cons = cons[::-1]
+        print(pros,cons)
+
+        params = {'Skills':Skills,"Resource":Resources,"Tools":Tools,"Aim":job.Job_Name,'Path_list':Path_list,'Total_time':Total_Time,'Time_list':Time_list,'Cumulative_Time':Cumulative_Time ,'Pros':pros , 'Cons':cons,'No_of_stages':range(len(Path_list))}        
             
     return render(request,'CareerGuidance/OutputPage.html',params) 

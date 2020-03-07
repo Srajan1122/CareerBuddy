@@ -76,9 +76,18 @@ callCenter = Node("Call Centre" , avgTime = 2 , parent = arts)
 #     joblib.dump(rf, 'rf.pkl')
 #     joblib.dump(data, 'data.pkl')
 # many nodes
-mba = Node("M.B.A", avgTime = 2 , prt = 'bba bscAgri bscBio' , parent = bba)
+mba = Node("M.B.A", avgTime = 2 , parent = bba)
 
 a =[sixth,seventh,eigth,ninth,tenth,diploma,licAgent,defence,iti,hsc,music,mscit,dataEntry,commerce,science,arts,dipTravel,licAgent,pilot,hotelMgmt,cA,bcom,csFoundation,bankExam,ima,pcmb,pcb,pcm,dEd,bscAgri,bscBio,nda,barch,be,bscPhy,bca,bams,bhms,mbbs,bscNursing,bmlt,bsw,callCenter,mba,bba,llb ]
 # a = [be,bca]
 for pre, fill, node in RenderTree(sixth):
     print("%s%s" % (pre, node.name))
+
+"""
+Banking
+Bank Manager
+Accountant
+Lawyer
+BAMS
+BHMS
+"""

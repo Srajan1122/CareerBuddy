@@ -14,6 +14,8 @@ class Node(models.Model):
     Node_id = models.IntegerField(
         primary_key=True, unique=True, null=False, blank=False)
     Node_Name = models.CharField(max_length = 50,default = "")
+    pros = models.CharField(max_length = 300 , default = "")
+    cons = models.CharField(max_length = 300 , default = "")
     def __str__(self):
         return self.Node_Name
 class M_to_M(models.Model):
@@ -45,5 +47,6 @@ class Tool(models.Model):
         Skillset, on_delete=models.CASCADE, default='null')
     def __str__(self):
         return self.Tool_Name
+
 
     
