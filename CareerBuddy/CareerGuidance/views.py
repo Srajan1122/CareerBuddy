@@ -91,3 +91,6 @@ def Output(request):
         params = {'Skills':Skills,"Resource":Resources,"Tools":Tools,"Aim":job.Job_Name,'Path_list':Path_list,'Total_time':Total_Time,'Time_list':Time_list,'Cumulative_Time':Cumulative_Time}        
             
     return render(request,'CareerGuidance/OutputPage.html',params) 
+
+def aptitude(request):
+    return render (request, 'CareerGuidance/aptitude.html')
