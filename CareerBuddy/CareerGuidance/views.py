@@ -1,6 +1,7 @@
 from sklearn import metrics
 import pandas as pd
-
+import os
+import csv
 
 import numpy as np
 import sklearn
@@ -174,11 +175,20 @@ def aptitude(request):
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3) # 70% training and 30% test
         clf.fit(X_train,y_train)
         y_pred=clf.predict(X_test)
-
+        BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         print("Accuracy:",(metrics.accuracy_score(y_test, y_pred))*100)
         species_idx = clf.predict([Answers])[0]
         print(species_idx)
-        Questions_Dict = {'Questions':Questions,'Answer':species_idx}
+        # newrow = ls.append(species_idx)
+        # newrow = [Ans1,Ans2,Ans3,Ans4,Ans5,Ans6,Ans7,Ans8,Ans9,Ans10,species_idx]
+        Answers.append(species_idx)
+        
+        # print(dante)
+        path = os.path.join(BASE_DIR,'CareerGuidance\data.csv')
+        with open(path,'a',newline='') as outfile:
+            append = csv.writer(outfile)
+            append.writerow(Answers)
+        Questions_Dict = {'Questions':Questions,'Answer':'We hope you choose a career in '+ species_idx +''}
 
 
     return render (request, 'CareerGuidance/aptitude.html',Questions_Dict)

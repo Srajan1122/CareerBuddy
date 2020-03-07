@@ -1,73 +1,99 @@
-{% extends 'CareerGuidance/Base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">  
-        {% block meta %}
-            
-        {% endblock meta %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        {% block link %}
-        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png" />
-    
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}" />
-        <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" />
-        <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}" />
-        <link rel="stylesheet" href="{% static 'vendors/nice-select/css/nice-select.css' %}" />
-        <!-- main css -->
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" />            
-        {% endblock link %}
-        
-        {% block title %}
-            
-        {% endblock title %}
-    </head>
-    <body>
-        {% block body %}
-        <section class="home_banner_area">
-            <div class="banner_inner">
-                <div class="card mx-4" style="z-index: 98;">
-                    
-                    <div class="card-body">
-                        <form method="POST" action="">
-                            {% for i in Questions %}
-                            {% csrf_token %}
-                            <h3>{{ i.Question }}</h3>
-                            <div style="width: 100%;">
-                                <select name="Ans{{ i.Question_id }}" class="form-control col-sm-10">
-                                    <option>{{ i.Option_1 }}</option>
-                                    <option>{{ i.Option_2 }}</option>
-                                    <option>{{ i.Option_3 }}</option>
-                                    <option>{{ i.Option_4 }}</option>
-                                </select>
-                            </div>
-                            {% endfor %}
-                            <button>
-                                Submit
-                            </button>
-                        </form>
-                    </div>
-                    <h1>We hope you choose a  <span class="badge badge-secondary">{{ Answer }}</span></h1>
-                </div>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <header class="header_area">
+        <div class="main_menu">
+  
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h" href=""
+                ><img src="{% static 'img/logo.png' %}" alt=""
+              /></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div
+                class="collapse navbar-collapse offset"
+                id="navbarSupportedContent"
+              >
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item mx-2 ">
+                    <a class="nav-link font-weight-normal" href="{% url 'Homepage' %}">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link font-weight-normal" href="{% url 'InputForm' %}">Find a Path</a>
+                  </li>                 
+                  
+                  <li class="nav-item mx-2 font-weight-normal">
+                    <a class="nav-link " href="{% url 'Aptitude' %}">Aptitude Test</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </section>
+          </nav>
+        </div>
+      </header>
+    
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Welcome to the general technical Aptitude test!!</h1>
+          <p class="lead">An aptitude test is a systematic means of testing a job candidate's abilities to perform specific tasks and react to a range of different situations. </p>
+        </div>
+      </div>
+      <div class="container" style="margin-top: 50px;">
+    <form method="POST" action="" >
+        {% csrf_token %}
+    <div class="shadow-lg p-3 container bg-white rounded">
+     {% for i in Questions %}
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">{{ i.Question }}</label>
+            <select class="form-control  " name="Ans{{ i.Question_id }}" id="exampleFormControlSelect1">
+              <option>{{ i.Option_1 }}</option>
+              <option>{{ i.Option_2 }}</option>
+              <option>{{ i.Option_3 }}</option>
+              <option>{{ i.Option_4 }}</option>
+            </select>
+          </div>
+          {% endfor %}
 
-        <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-        <script src="{% static 'js/popper.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
-        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %}"></script>
-        <script src="{% static 'js/owl-carousel-thumb.min.js' %}"></script>
-        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
-        <script src="{% static 'js/mail-script.js' %}"></script>
-        <!--gmaps Js-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-        <script src="{% static 'js/gmaps.min.js' %}"></script>
-        <script src="{% static 'js/theme.js' %}"></script>
-        {% endblock %}
-    </body>
+          <button class="btn my-5 btn-primary">
+              submit
+          </button>
+          <small>
+            <h1>{{ Answer }}</h1>
+          </small>
+     
+    </div>
+</form>
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>
