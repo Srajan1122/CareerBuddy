@@ -31,16 +31,27 @@
         <section class="home_banner_area">
             <div class="banner_inner">
                 <div class="card mx-4" style="z-index: 98;">
+                    
                     <div class="card-body">
-                        <form method="POST">
-                            <h3>Question No </h3>
+                        <form method="POST" action="">
+                            {% for i in Questions %}
+                            {% csrf_token %}
+                            <h3>{{ i.Question }}</h3>
                             <div style="width: 100%;">
-                                <select class="form-control col-sm-10">
-                                    <option>Default select</option>
+                                <select name="Ans{{ i.Question_id }}" class="form-control col-sm-10">
+                                    <option>{{ i.Option_1 }}</option>
+                                    <option>{{ i.Option_2 }}</option>
+                                    <option>{{ i.Option_3 }}</option>
+                                    <option>{{ i.Option_4 }}</option>
                                 </select>
                             </div>
+                            {% endfor %}
+                            <button>
+                                Submit
+                            </button>
                         </form>
                     </div>
+                    <h1>We hope you choose a  <span class="badge badge-secondary">{{ Answer }}</span></h1>
                 </div>
             </div>
         </section>

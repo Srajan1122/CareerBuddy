@@ -47,6 +47,17 @@ class Tool(models.Model):
         Skillset, on_delete=models.CASCADE, default='null')
     def __str__(self):
         return self.Tool_Name
+class Aptitude_Test(models.Model):
+    Question_id  = models.IntegerField(
+        primary_key=True, unique=True, null=False, blank=False)
+    Question = models.CharField(max_length = 100222,default = 'null')
+    Option_1 = models.CharField(max_length = 100,default = 'null')
+    Option_2 = models.CharField(max_length = 100,default = 'null')
+    Option_3 = models.CharField(max_length = 100,default = 'null')
+    Option_4 = models.CharField(max_length = 100,default = 'null')
+    Answer = models.CharField(max_length = 100,default = 'null')
+
+
 
 
     

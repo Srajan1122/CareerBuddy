@@ -1,7 +1,17 @@
+from sklearn import metrics
+import pandas as pd
+
+
+import numpy as np
+import sklearn
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+import joblib
+
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
 import anytree
-from .models import Job,Node,Skillset,Tool,Resource,M_to_M
+from .models import Job,Node,Skillset,Tool,Resource,M_to_M,Aptitude_Test
 
 # Create your views here.
 def HomePage(request):
@@ -125,5 +135,51 @@ def Output(request):
     return render(request,'CareerGuidance/OutputPage.html',params) 
 
 def aptitude(request):
-    return render (request, 'CareerGuidance/aptitude.html')
+    Questions = Aptitude_Test.objects.all()
+    Questions_Dict = {'Questions':Questions}
+    print(Questions)
+    for i in Questions:
+        print(i.Question)
+    if request.method == 'POST':
+        Ans1 = request.POST.get('Ans1')
+        Ans2 = request.POST.get('Ans2')
+        Ans3 = request.POST.get('Ans3')
+        Ans4 = request.POST.get('Ans4')
+        Ans5 = request.POST.get('Ans5')
+        Ans6 = request.POST.get('Ans6')
+        Ans7 = request.POST.get('Ans7')
+        Ans8 = request.POST.get('Ans8')
+        Ans9 = request.POST.get('Ans9')
+        Ans10 = request.POST.get('Ans10')
+        ls = [Ans1,Ans2,Ans3,Ans4,Ans5,Ans6,Ans7,Ans8,Ans9,Ans10]
+        print(Ans10)
+        Answers = []
+        for i in range(0,10):
+            if ls[i] == Aptitude_Test.objects.get(Question_id = i+1).Answer:
+                Answers.append(1)
+            else :
+                Answers.append(0)
+        print(Answers)
+        col_name = ['Ans_1','Ans_2','Ans_3','Ans_4','Ans_5','Ans_6','Ans_7','Ans_8','Ans_9','Ans_10','Target']
+        df = pd.read_csv('CareerGuidance/data.csv',names = col_name)
+        df.head()
+        df.Target.unique()
+        y=df.iloc[:,-1]
+        y= np.array(y)
+
+        X=df[['Ans_1', 'Ans_2', 'Ans_3', 'Ans_4','Ans_5','Ans_6','Ans_7','Ans_8','Ans_9','Ans_10',]]
+        y=df['Target']  # Labels
+
+        clf=RandomForestClassifier(n_estimators=100)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3) # 70% training and 30% test
+        clf.fit(X_train,y_train)
+        y_pred=clf.predict(X_test)
+
+        print("Accuracy:",(metrics.accuracy_score(y_test, y_pred))*100)
+        species_idx = clf.predict([Answers])[0]
+        print(species_idx)
+        Questions_Dict = {'Questions':Questions,'Answer':species_idx}
+
+
+    return render (request, 'CareerGuidance/aptitude.html',Questions_Dict)
 
