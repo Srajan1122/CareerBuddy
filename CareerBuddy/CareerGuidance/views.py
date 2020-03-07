@@ -13,6 +13,7 @@ def InputForm(request):
     return render(request,'CareerGuidance/InputForm.html')
 
 def Output(request):
+    params = {}
     from . import tree
     #print(tree.mba)
     print("Printed in views.Output")
