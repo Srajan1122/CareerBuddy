@@ -1,4 +1,4 @@
-;(function($){
+f;(function($){
     "use strict"
     var nav_offset_top = $('.header_area').height()+50; 
     /*-------------------------------------------------------------------------------
