@@ -1,0 +1,174 @@
+0,0,0,0,0,0,1,0,1,0,Non-Technical Field
+1,1,0,0,0,1,1,1,1,0,Technical Field
+0,1,1,0,1,0,1,0,0,1,Neutral
+0,1,1,1,1,0,1,1,0,1,Technical Field
+1,0,0,1,0,1,0,1,1,1,Technical Field
+0,1,0,0,0,1,0,1,0,1,Non-Technical Field
+0,1,0,0,0,1,0,1,1,1,Neutral
+0,0,1,0,0,0,1,1,0,1,Non-Technical Field
+0,1,0,0,0,0,1,0,1,1,Non-Technical Field
+0,0,1,0,1,0,0,1,1,0,Non-Technical Field
+0,0,0,0,0,1,0,0,0,0,Non-Technical Field
+1,0,1,1,0,1,1,1,0,0,Technical Field
+1,0,0,1,1,0,0,0,0,0,Non-Technical Field   
+1,1,1,1,1,0,0,0,1,0,Technical Field
+0,1,1,0,1,1,0,0,1,0,Neutral
+0,1,0,1,1,1,0,0,0,0,Non-Technical Field
+1,0,1,1,1,1,1,0,0,1,Technical Field
+1,1,1,1,0,0,0,1,1,1,Technical Field
+1,0,1,1,0,1,0,0,1,0,Neutral
+1,0,1,1,1,0,1,1,1,1,Technical Field
+1,0,1,1,1,0,1,0,0,0,Neutral
+1,1,1,0,0,0,1,1,1,0,Technical Field
+1,1,1,1,0,1,0,0,0,1,Technical Field
+1,1,1,0,0,1,0,1,0,0,Neutral
+1,0,0,1,0,1,1,1,1,1,Technical Field
+1,1,0,0,1,1,1,1,0,1,Technical Field
+0,1,1,0,0,0,0,1,0,1,Non-Technical Field
+0,0,0,1,0,1,1,0,1,1,Neutral
+1,1,1,1,0,0,0,1,0,0,Neutral
+1,0,0,1,0,1,0,0,1,1,Neutral
+1,1,0,1,1,0,1,1,0,1,Technical Field
+0,0,1,1,0,1,0,1,1,0,Neutral
+0,1,0,0,1,1,0,0,0,0,Non-Technical Field
+0,0,1,1,1,0,0,1,1,1,Technical Field
+1,1,0,1,0,1,0,1,0,1,Technical Field
+0,1,1,0,1,1,0,0,1,1,Technical Field
+0,0,0,0,1,0,0,0,0,1,Non-Technical Field
+1,0,0,0,0,1,0,1,0,0,Non-Technical Field
+1,1,0,0,0,0,0,1,0,0,Non-Technical Field
+0,1,1,0,1,0,1,1,0,1,Technical Field
+1,1,0,1,1,1,1,0,1,1,Technical Field
+1,1,0,0,1,1,0,1,0,0,Neutral
+1,1,0,0,0,0,0,1,1,0,Non-Technical Field
+0,0,1,0,1,1,1,1,0,1,Technical Field
+0,1,0,1,0,0,1,1,0,0,Non-Technical Field
+0,1,0,1,1,0,1,1,1,1,Technical Field
+0,1,1,1,0,0,0,1,1,0,Neutral
+1,0,1,1,0,0,1,1,0,1,Technical Field
+1,1,1,0,1,0,0,1,1,0,Technical Field
+1,1,0,0,1,0,0,1,0,1,Neutral
+0,0,1,1,1,1,0,0,0,0,Non-Technical Field
+0,1,0,1,0,0,0,1,1,0,Non-Technical Field
+0,1,0,0,1,1,0,1,1,1,Technical Field
+0,0,1,1,0,1,1,0,0,0,Non-Technical Field
+1,1,1,0,1,1,1,0,0,0,Technical Field
+0,1,0,1,1,0,0,1,0,1,Neutral
+1,0,0,0,0,1,1,1,0,0,Non-Technical Field
+0,1,0,0,1,1,1,1,0,0,Neutral
+0,1,0,0,1,1,0,1,0,1,Neutral
+0,0,0,1,0,1,1,1,0,0,Non-Technical Field
+1,0,0,1,0,1,1,0,0,1,Neutral
+0,1,1,1,0,1,0,0,1,0,Neutral
+1,1,0,0,0,1,0,1,1,0,Neutral
+1,1,1,1,1,1,0,0,0,0,Technical Field
+0,0,1,1,0,0,1,1,1,1,Technical Field
+0,1,1,0,1,1,1,0,0,0,Neutral
+1,0,1,1,1,0,1,1,1,1,Technical Field
+0,1,1,0,1,0,1,0,1,0,Neutral
+0,1,0,0,0,0,0,0,0,1,Non-Technical Field
+1,0,1,0,0,0,0,1,1,0,Non-Technical Field
+0,1,0,0,0,1,0,0,0,1,Non-Technical Field
+0,0,0,0,0,0,1,0,1,0,Non-Technical Field
+0,1,1,1,1,0,1,0,0,1,Technical Field
+0,1,0,1,1,1,0,0,1,0,Neutral
+0,0,0,1,1,1,0,0,0,0,Non-Technical Field
+0,0,0,1,0,0,0,0,1,1,Non-Technical Field
+1,0,1,1,1,1,1,1,1,0,Technical Field
+0,1,0,1,1,0,0,1,1,0,Neutral
+0,1,1,1,0,1,0,1,0,0,Neutral
+1,0,1,0,1,0,1,0,1,0,Neutral
+0,1,1,0,1,0,1,1,0,0,Neutral
+1,1,1,1,1,0,0,0,0,0,Neutral
+0,1,0,1,0,1,1,1,0,0,Neutral
+0,0,1,0,0,0,1,0,0,0,Non-Technical Field
+1,1,0,1,1,0,1,1,1,1,Technical Field
+1,1,1,0,1,0,0,1,1,1,Technical Field
+0,0,0,1,1,0,0,1,1,0,Non-Technical Field
+0,1,0,0,0,1,1,1,1,0,Neutral
+0,0,0,1,0,0,1,0,1,1,Non-Technical Field
+0,0,1,1,1,1,0,1,1,1,Technical Field
+1,1,1,0,1,0,1,0,1,1,Technical Field
+1,0,0,1,0,0,1,0,1,0,Non-Technical Field
+1,1,0,1,1,1,1,1,1,0,Technical Field
+1,1,0,0,1,0,1,0,1,1,Technical Field
+1,0,1,1,1,1,1,1,1,1,Technical Field
+1,0,0,0,0,0,1,0,1,1,Non-Technical Field
+1,0,0,1,1,1,1,0,0,0,Neutral
+0,1,1,0,0,1,1,0,0,0,Non-Technical Field
+0,0,0,1,0,1,1,1,0,0,Non-Technical Field
+0,1,1,1,1,0,0,0,1,0,Neutral
+0,0,1,1,1,1,1,1,0,0,Technical Field
+1,1,0,0,1,0,0,1,1,1,Technical Field
+0,0,0,1,0,0,0,1,1,0,Non-Technical Field
+0,1,0,1,1,1,1,0,1,1,Technical Field
+1,0,0,0,1,0,0,1,0,1,Non-Technical Field
+1,0,0,0,1,0,1,0,0,0,Non-Technical Field
+1,0,1,1,0,1,1,0,0,1,Technical Field
+0,0,1,1,0,1,0,1,1,1,Technical Field
+0,1,0,0,0,1,0,1,0,0,Non-Technical Field
+0,1,1,1,1,0,0,1,0,0,Neutral
+0,0,0,1,1,1,0,0,0,1,Non-Technical Field
+0,0,0,1,1,1,1,0,1,1,Technical Field
+1,1,1,0,0,0,0,1,0,0,Non-Technical Field
+0,1,0,0,1,1,0,0,0,0,Non-Technical Field
+1,1,0,1,0,1,0,1,1,0,Technical Field
+0,1,0,0,1,0,0,1,0,1,Non-Technical Field
+0,0,1,0,0,0,0,1,1,0,Non-Technical Field
+0,0,1,0,0,1,1,0,0,1,Non-Technical Field
+1,0,1,0,1,0,1,0,1,0,Neutral
+1,0,0,1,1,0,0,0,0,1,Non-Technical Field
+0,0,1,1,0,1,0,1,1,0,Neutral
+0,1,0,1,1,1,1,1,0,1,Technical Field
+0,0,0,0,1,0,0,0,1,0,Non-Technical Field
+1,0,0,0,1,0,1,0,1,0,Non-Technical Field
+0,1,0,0,0,1,0,1,0,0,Non-Technical Field
+1,0,0,1,0,1,1,0,0,0,Non-Technical Field
+1,1,0,1,1,0,1,0,0,1,Technical Field
+0,1,1,0,1,1,0,0,1,0,Neutral
+0,0,0,0,1,0,0,1,1,1,Non-Technical Field
+1,1,0,1,1,1,0,1,1,0,Technical Field
+0,1,0,0,1,1,1,1,0,0,Neutral
+0,0,0,1,1,1,1,1,1,1,Technical Field
+0,1,1,0,0,1,1,1,1,0,Technical Field
+0,1,1,1,1,1,0,0,0,0,Neutral
+0,0,1,1,1,0,0,0,0,1,Non-Technical Field
+1,0,1,0,0,0,0,1,1,0,Non-Technical Field
+0,0,1,1,0,1,1,0,1,1,Technical Field
+0,0,1,1,0,0,0,1,1,1,Neutral
+0,1,1,0,1,0,0,1,1,1,Technical Field
+1,1,0,1,1,1,1,0,0,0,Technical Field
+0,1,1,1,0,1,1,1,1,0,Technical Field
+0,0,1,0,0,0,1,1,0,1,Non-Technical Field
+1,0,1,0,1,1,1,1,0,1,Technical Field
+1,1,0,1,0,1,0,1,1,1,Technical Field
+1,1,0,0,0,0,1,0,1,0,Non-Technical Field
+1,0,0,0,0,0,1,1,0,0,Non-Technical Field
+0,0,0,1,1,1,0,1,0,1,Neutral
+0,0,1,0,0,1,0,0,0,1,Non-Technical Field
+0,0,1,1,0,1,0,1,0,0,Non-Technical Field
+0,0,1,1,1,0,0,1,1,1,Technical Field
+0,0,1,1,0,1,1,1,0,0,Neutral
+1,1,1,1,0,0,1,1,1,0,Technical Field
+0,1,1,1,1,0,0,1,1,1,Technical Field
+0,0,1,1,1,1,1,0,1,1,Technical Field
+1,0,1,0,0,0,1,0,0,0,Non-Technical Field
+0,1,1,0,0,0,0,0,1,0,Non-Technical Field
+1,0,1,1,0,1,1,1,1,1,Technical Field
+1,1,1,0,1,1,0,1,0,0,Technical Field
+1,1,1,0,1,0,0,0,1,0,Neutral
+0,1,0,1,0,1,0,0,0,1,Non-Technical Field
+0,1,1,1,0,0,0,0,1,1,Neutral
+1,0,1,0,1,1,0,0,1,1,Technical Field
+0,0,1,1,1,1,1,1,1,1,Technical Field
+0,0,0,1,0,1,0,0,1,1,Non-Technical Field
+1,1,1,0,0,1,1,0,0,0,Neutral
+1,1,1,1,0,1,0,1,0,0,Technical Field
+1,1,0,0,1,1,1,0,1,0,Technical Field
+1,1,1,1,0,1,0,0,1,1,Technical Field
+1,1,1,1,1,0,1,0,1,1,Technical Field
+0,0,1,0,0,0,1,1,0,1,Non-Technical Field
+0,1,1,1,1,1,1,0,1,0,Technical Field
+0,0,0,0,0,0,1,0,1,0,Non-Technical Field
+1,0,0,0,0,0,1,1,0,0,Non-Technical Field
+1,0,0,0,0,0,1,1,0,0,Non-Technical Field
