@@ -79,14 +79,21 @@
               </div>
             </div>
             <div class="Form_signup-form">
-              <form method="POST" class="Form_register-form" id="register-form">
+              <form method="POST" class="Form_register-form" id="register-form" action ={% url 'Output' %}>
+                {% csrf_token %}
                 <div>
                   <div>
                     <div class="Form_form-input">
                       <label for="first_name" class="required"
                         >First name</label
                       >
-                      <input type="text" name="first_name" id="first_name" />
+                      <input type="text" name="first_name" id="first_name" required/>
+                    </div>
+                    <div class="Form_form-input">
+                      <label for="age" class="required"
+                        >Age</label
+                      >
+                      <input type="number" name="age" id="age" required/>
                     </div>
                     <div class="Form_form-input">
                       <label for="first_name" class="required"
@@ -96,36 +103,38 @@
                         type="text"
                         name="qualification"
                         id="qualification"
+                        required
                       />
                     </div>
                   </div>
                   <div>
-                    <div class="Form_form-input">
-                      <label for="last_name" class="required">Last name</label>
-                      <input type="text" name="last_name" id="last_name" />
-                    </div>
+                    
                     <div class="Form_label-flex">
                       <label for="meal_preference">Goal</label>
                     </div>
                     <div>
-                      <select name="meal_preference" id="meal_preference">
-                        <option value="Vegetarian">Vegetarian</option>
-                        <option value="Kosher">Kosher</option>
-                        <option value="Asian Vegetarian">Asian Vegetarian</option>
+                      <select name="interest" id="interest">
+                        <option value="DataScience">DataScience</option>
+                        <option value="M.B.A">M.B.A</option>
+                        <option value="M.B.B.S">M.B.B.S</option>
+                        <option value="Lawyer">Lawyer</option>
+                        <option value="Banking">Banking</option>
                       </select>
                     </div>
+                     <div class="Form_form-submit">
+                    <input
+                      type="submit"
+                      value="Submit"
+                      class="submit"
+                      id="submit"
+                      name="submit"
+                    />
                   </div>
+                  </div>
+                  
                 </div>
 
-                <div class="Form_form-submit">
-                  <input
-                    type="submit"
-                    value="Submit"
-                    class="submit"
-                    id="submit"
-                    name="submit"
-                  />
-                </div>
+                
               </form>
             </div>
           </div>
