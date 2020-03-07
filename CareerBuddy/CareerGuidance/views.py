@@ -46,7 +46,6 @@ def Output(request):
         #print(R_id,R_id.Resource_Link)
         print(R_id,'hi')
         for i in R_id:
-            # print(i)
             Resources.append(i.Resource_Link)
         try:
             T_id = Tool.objects.get(Skill_id = sk_id.Skill_id )
@@ -71,58 +70,60 @@ def Output(request):
         Total_Time = 0
         Cumulative_Time = []
         
-        params = {'Skills':Skills,"Resource":Resources,"Tools":Tools,"Aim":job.Job_Name,}
         mynode = n_id.Node_id.Node_Name
+
+
         if mynode[0] == '[':
             mynode = mynode.strip("[]").split(',')
             for i in mynode:
                 # schema = tree.route(i)
                 node = tree.a
                 for k in node:
-                    print(i,k.name)
                     if i == k.name:
-                        print(i,k)
                         for j in k.path[::-1]:
-                            print(j)
                             break
         else:
             node = tree.a
             for i in node:
-                print('hi')
-                print(i.name)
                 if i.name == mynode:
                     for j in i.path[::-1]:
-                        
-                        # print(j[5:-12].strip("''").split('/'),type(j),j[5:-12])
-                        # Path_list = j[5:-12].strip("''").split('/')[1:]
-                        Total_Time = Total_Time + i.avgTime
+                        print(j)
                         Cumulative_Time.append(Total_Time)
                         Time_list.append(i.avgTime)
-                        print(j)
                         new_id = Node.objects.get( Node_Name = j.name )
                         pros.append(new_id.pros)
                         cons.append(new_id.cons)
-                        # pros.append()
-                        # print(avgTime)
                         if flag == 0 :
                             j = str(j)
                             Path_list = j[5:-12].strip("''").split('/')[1:]
                             
-                            flag = flag + 1
+                            flag = flag + 1 
 
-
-                        
-                    
-                        print(j)
-        print(Path_list,Time_list)
-        
         pros = pros[::-1]
         cons = cons[::-1]
-        print(pros,cons)
 
-        params = {'Skills':Skills,"Resource":Resources,"Tools":Tools,"Aim":job.Job_Name,'Path_list':Path_list,'Total_time':Total_Time,'Time_list':Time_list,'Cumulative_Time':Cumulative_Time ,'Pros':pros , 'Cons':cons,'No_of_stages':range(len(Path_list))}        
-            
+        index = Path_list.index(qualification)
+
+        Path_list = Path_list[index::]
+        pros = pros[index::]
+        cons = cons[index::]
+        Time_list = Time_list[index::]
+
+
+        data = []
+        for i in range(len(Path_list)):
+            dictionary = {}
+            dictionary['Stage'] = i+1
+            dictionary['Path_list'] = Path_list[i]
+            dictionary['pros'] = pros[i]
+            dictionary['cons'] = cons[i]
+            dictionary['Time_list'] = Time_list[i]
+            data.append(dictionary)
+
+        params = {'data' : data ,'total_length':len(Path_list),'resources':Resources,'tools':Tdante}
+
     return render(request,'CareerGuidance/OutputPage.html',params) 
 
 def aptitude(request):
     return render (request, 'CareerGuidance/aptitude.html')
+

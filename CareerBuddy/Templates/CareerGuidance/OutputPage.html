@@ -46,39 +46,46 @@
 </script>
 
             <div class="appointment-inner">
-                {% for i in Path_list%}
+                {% for i in data %}
                 <div >
                     <div class="mx-5">
-                        <h3>Stage {{ i }}</h3>
+                        <h3>Stage {{ i.Stage }}</h3>
                         <div class="accordion" id="accordionExample">
 
                             <div class="card bg-light" style="background-color : white;">
                                 <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link text-justify" type="button" data-toggle="collapse" id="{{ i }}" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick = 'count(this)'>
-                                            God male gathering them it female which green cattle?
+                                    <h5 class=" mx-0">
+                                        <button class="btn btn-link text-justify" type="button" data-toggle="collapse" id="{{ i.Stage }}" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick = 'count(this)'>
+                                            <p>Click for more details</p>
                                         </button>
-
                                     </h5>
                                 </div>
 
-                                <div id="dakota{{ i }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" value=''>
+                                <div id="dakota{{ i.Stage }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample" value=''>
                                     <div class="card-body">
+                                        <h3>{{i.Time_list}} years</h3>  
                                         Great day without sixth a lesser beginning. Their thing abundantly air moving saw fruitful lesser god. Sea abundantly blessed life set. Land. Lights divided man in deep in open upon.
                                     </div>
-
+                                    {% if i.Stage == total_length %}
                                     <div class="mx-4 font-weight-bold display-5">
                                         Tools
                                         <ol>
-                                            <li>
-                                                Srajan
-                                            </li>
+                                            
+                                               {% for j in tools%}
+                                               <li>
+                                                    {{j}}
+                                                </li>
+                                                {% endfor %}
+                                           
                                         </ol>    
                                     </div>
-
+                                    {% for j in resources %}
                                     <div>
-                                        <p class='mx-4 font-weight-bold'>Resources  ----    <a href='#'>google.com</a><p>
+                                        <p class='mx-4 font-weight-bold'>Resources  ----    <a href='{{j}}'>{{j}}</a><p>
                                     </div>
+                                    {% endfor %}
+
+                                    {% endif %}
 
 
                                     <div class="row">
@@ -86,7 +93,7 @@
                                           <div class="card">
                                             <div class="card-body">
                                               <h5 class="card-title">Pros</h5>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                              <p class="card-text">{{ i.pros }}</p>
                                             </div>
                                           </div>
                                         </div>
@@ -94,7 +101,7 @@
                                           <div class="card">
                                             <div class="card-body">
                                               <h5 class="card-title">Cons</h5>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                              <p class="card-text">{{ i.cons }}</p>
                                             </div>
                                           </div>
                                         </div>
