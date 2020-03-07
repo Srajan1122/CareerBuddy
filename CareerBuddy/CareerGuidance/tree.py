@@ -1,4 +1,6 @@
-from anytree import Node, RenderTree
+import anytree
+from anytree import Node, RenderTree,search
+from anytree import AsciiStyle, PreOrderIter
 from anytree.exporter import DotExporter
 from anytree.dotexport import RenderTreeGraph
 
@@ -69,25 +71,23 @@ bsw = Node("B.S.W" , avgTime = 3 , parent = arts)
 llb = Node("L.L.B" , avgTime = 2 , parent = arts)
 bba = Node("B.B.A" , avgTime = 2 , parent = arts)
 callCenter = Node("Call Centre" , avgTime = 2 , parent = arts)
-
+# path = os.path.join(settings.MODEL_ROOT, 'rf')
+# with open(path, 'wb') as file:
+#     joblib.dump(rf, 'rf.pkl')
+#     joblib.dump(data, 'data.pkl')
 # many nodes
-mba = Node("M.B.A", avgTime = 2 , prt = 'bba bscAgri bscBio' , parent = bba)
+mba = Node("M.B.A", avgTime = 2 , parent = bba)
 
-
-
-
-# print(licAgent.iter_path_reverse())
-# print(licAgent)
-# #Node('/Udo')
-# print(joe)
-# #Node('/Udo/Dan/Joe')
-
+a =[sixth,seventh,eigth,ninth,tenth,diploma,licAgent,defence,iti,hsc,music,mscit,dataEntry,commerce,science,arts,dipTravel,licAgent,pilot,hotelMgmt,cA,bcom,csFoundation,bankExam,ima,pcmb,pcb,pcm,dEd,bscAgri,bscBio,nda,barch,be,bscPhy,bca,bams,bhms,mbbs,bscNursing,bmlt,bsw,callCenter,mba,bba,llb ]
+# a = [be,bca]
 for pre, fill, node in RenderTree(sixth):
     print("%s%s" % (pre, node.name))
 
-DotExporter(sixth).to_dotfile("tree.dot")
-
-
-
-#SSC = Node("SSC")
-   
+"""
+Banking
+Bank Manager
+Accountant
+Lawyer
+BAMS
+BHMS
+"""
